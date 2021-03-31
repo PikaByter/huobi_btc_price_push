@@ -1,7 +1,8 @@
 from util.my_urllib import fuck_ssl
+from fangtang_KEY import API_Key
 
 # 自己去申请一个
-API_Key="SCT19128TvH96G3HJivHMLPFxSvXgJ8RW"
+Key=API_Key
 
 # 封装方糖推送服务
 def fangtang_push(title, detail):
@@ -14,7 +15,7 @@ def fangtang_push(title, detail):
                       'Chrome/52.0.2743.116 Safari/537.36',
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     }
-    push_url = "https://sctapi.ftqq.com/%s.send"%API_Key
+    push_url = "https://sctapi.ftqq.com/%s.send"%Key
     fuck_ssl.set_headers(headers)
     fuck_ssl.mypost(push_url, data=push_data)
 
